@@ -20,8 +20,14 @@
       align-items: center;
       gap: 20px;
       border-bottom: 3px solid #002d72;
-   
-    }
+      
+    header img {
+      max-height: 90px;   /* altura máxima da logo */
+      width: auto;        /* largura proporcional */
+      object-fit: contain; /* garante que a imagem se encaixe */
+      display: block;
+}
+      
     .header-title {
       flex: 1;
       text-align: center;
