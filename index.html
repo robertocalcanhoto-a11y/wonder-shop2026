@@ -20,28 +20,25 @@
       padding: 16px 30px;
       display: flex;
       align-items: center;
-      gap: 20px;
+      justify-content: space-between;
       border-bottom: 3px solid #002d72;
       max-width: 1100px;
       margin: 0 auto;
     }
-    header img {
-      max-height: 90px;
-      width: auto;
+    .logo-area img,
+    .header-middle img,
+    .header-right img {
+      max-height: 70px;
       object-fit: contain;
       display: block;
     }
     .header-title {
       flex: 1;
       text-align: center;
-      font-size: 26px;
+      font-size: 22px;
       font-weight: bold;
       color: #002d72;
       letter-spacing: 0.5px;
-    }
-    .header-spacer {
-      width: 180px;
-      flex-shrink: 1;
     }
 
     /* === CATEGORY SECTION === */
@@ -115,17 +112,28 @@
 </head>
 <body>
 
-  <!-- Cabeçalho -->
+  <!-- HEADER -->
   <header>
-    <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.22.1/mercadolibre/logo__large_plus.png" alt="Logo Mercado Livre">
-    <div class="header-title">Wonder Shop</div>
-    <div class="header-spacer"></div>
+    <div class="logo-area">
+      <img src="https://raw.githubusercontent.com/robertocalcanhoto-a11y/wonder-shop2026/main/logomercadolivre.png" alt="Logo Mercado Livre">
+    </div>
+    
+    <div class="header-title">Mercado Livre e afiliada Wonder Shop</div>
+    
+    <div class="header-middle">
+      <img src="https://github.com/robertocalcanhoto-a11y/wonder-shop2026/main/logowondershop.png" alt="Logo Wonder Shop">
+    </div>
+    
+    <div class="header-right">
+      <img src="https://raw.githubusercontent.com/robertocalcanhoto-a11y/wonder-shop2026/main/aviaologo.png" alt="Avialo Logo">
+    </div>
   </header>
 
   <!-- Categoria Eletrônicos -->
   <section class="category-section">
     <div class="category-title">Eletrônicos</div>
     <div class="category-grid">
+      <!-- 6 cards -->
       <div class="card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_957981-MLA110124413534_042026-F.webp"><div class="card-content"><h3>Balança Bioimpedância</h3><p>Análise Corporal</p><div><span class="price-original">R$ 249,90</span><span class="discount">-20%</span></div><div class="price-final">R$ 199,90</div><a href="#" class="buy-button">Comprar</a></div></div>
       <div class="card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_630584-MLA99993575737_112025-F.webp"><div class="card-content"><h3>PC Gamer Completo</h3><p>I5 16GB RAM SSD</p><div><span class="price-original">R$ 3.499,90</span><span class="discount">-17%</span></div><div class="price-final">R$ 2.899,90</div><a href="#" class="buy-button">Comprar</a></div></div>
       <div class="card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_685909-MLA101438581463_122025-F.webp"><div class="card-content"><h3>Monitor 24" FHD</h3><p>144Hz 1ms MBR</p><div><span class="price-original">R$ 1.099,90</span><span class="discount">-18%</span></div><div class="price-final">R$ 899,90</div><a href="#" class="buy-button">Comprar</a></div></div>
@@ -133,6 +141,12 @@
       <div class="card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_962541-MLA108945231847_032026-F.webp"><div class="card-content"><h3>Headset Gamer</h3><p>Wireless RGB 7.1</p><div><span class="price-original">R$ 499,90</span><span class="discount">-20%</span></div><div class="price-final">R$ 399,90</div><a href="#" class="buy-button">Comprar</a></div></div>
       <div class="card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_823461-MLA101234567890_112025-F.webp"><div class="card-content"><h3>Teclado Mecânico</h3><p>RGB Switch Blue</p><div><span class="price-original">R$ 399,90</span><span class="discount">-13%</span></div><div class="price-final">R$ 349,90</div><a href="#" class="buy-button">Comprar</a></div></div>
     </div>
+  </section>
+
+  <!-- Repita o mesmo bloco para Moda, Decoração e Acessórios -->
+</body>
+</html>
+
   </section>
 
   <!-- Categoria Moda -->
