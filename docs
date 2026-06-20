@@ -21,7 +21,7 @@
       gap: 20px;
       border-bottom: 3px solid #002d72;
     }
-    .header-right img {
+    header img {
       max-height: 90px;
       width: auto;
       object-fit: contain;
@@ -163,15 +163,19 @@
   <div class="header-title">Mercado Livre e afiliada Wonder Shop</div>
   
   <div class="header-middle">
-    <img src="https://github.com/robertocalcanhoto-a11y/wonder-shop2026/main/logowondershop.png" alt="Logo Wonder Shop">
+    <img src="https://raw.githubusercontent.com/robertocalcanhoto-a11y/wonder-shop2026/main/logowondershop.png" alt="Logo Wonder Shop">
   </div>
 
   <div class="header-right">
-  <img src="https://raw.githubusercontent.com/robertocalcanhoto-a11y/wonder-shop2026/main/aviaologo.png" alt="Avialo Logo">
+    <img src="https://raw.githubusercontent.com/robertocalcanhoto-a11y/wonder-shop2026/main/aviaologo.png" alt="Avialo Logo">
   </div>
   
   <div class="header-spacer"></div>
 </header>
+
+</body>
+</html>
+
 
 
   <!-- Aqui continuam suas seções de categorias e cards -->
