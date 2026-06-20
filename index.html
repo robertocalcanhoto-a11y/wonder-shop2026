@@ -15,6 +15,8 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
   color: #002d72;
+  max-width: 1240px;   /* mesma largura do cabeçalho */
+  margin: 0 auto;      /* centraliza */
 }
 
 /* === HEADER === */
@@ -25,6 +27,8 @@ header {
   align-items: center;
   gap: 20px;
   border-bottom: 3px solid #002d72;
+  max-width: 1240px;   /* mesma largura do body */
+  margin: 0 auto;
 }
 header img {
   max-height: 90px;
@@ -47,7 +51,7 @@ header img {
 
 /* === CATEGORY SECTION === */
 .category-section {
-  max-width: 1240px;
+  max-width: 1240px;   /* mesma largura do cabeçalho */
   margin: 30px auto;
   padding: 0 20px;
 }
@@ -136,6 +140,7 @@ header img {
   transition: background-color 0.2s ease;
 }
 .buy-button:hover { background-color: #0044aa; }
+
 
 /* === RESPONSIVE === */
 @media (max-width: 1200px) {
