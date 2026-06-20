@@ -6,65 +6,10 @@
   <title>Mercado Livre e afiliada Wonder Shop</title>
   <style>
    <div class="card">
-  <img src="URL_DA_IMAGEM" alt="Produto">
-  <div class="card-content">
-    <h3>Nome do Produto</h3>
-    <p>Descrição breve</p>
-    <div class="price">R$ 199,90</div>
-    <a href="#" class="buy-button">Comprar</a>
-  </div>
-</div>
-
-    }
-
-    /* === HEADER === */
-    header {
-      background-color: #ffe600;
-      padding: 16px 30px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      border-bottom: 3px solid #002d72;
-    }
-    header img {
-      max-height: 90px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
-    .header-title {
-      flex: 1;
-      text-align: center;
-      font-size: 26px;
-      font-weight: bold;
-      color: #002d72;
-      letter-spacing: 0.5px;
-    }
-    .header-spacer {
-      width: 180px;
-      flex-shrink: 1;
-    }
-
-    /* === CATEGORY SECTION === */
-.category-section {
-  max-width: 1240px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-.category-title {
-  background-color: #002d72;
-  color: #ffe600;
-  padding: 14px 24px;
-  font-size: 20px;
-  font-weight: bold;
-  border-radius: 8px 8px 0 0;
-  letter-spacing: 0.5px;
-}
-
+  /* === CATEGORY GRID === */
 .category-grid {
   display: grid;
-  grid-template-columns: 1fr; /* cada card ocupa toda a largura */
+  grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
   gap: 20px;
   background-color: #fff;
   border: 2px solid #e0e0e0;
@@ -74,88 +19,69 @@
 }
 
 /* === PRODUCT CARD === */
-.category-grid {
-  display: grid;
-  grid-template-columns: 1fr; /* cada card ocupa toda a largura */
-  gap: 20px;
-  background-color: #fff;
-  border: 2px solid #e0e0e0;
-  border-top: none;
-  border-radius: 0 0 8px 8px;
-  padding: 20px;
-}
-
 .card {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 6px;
   display: flex;
   flex-direction: row; /* imagem à esquerda, texto à direita */
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
+  padding: 12px;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
-
 .card:hover {
   box-shadow: 0 4px 14px rgba(0,0,0,0.12);
   transform: translateY(-2px);
 }
-
 .card img {
-  width: 250px;   /* largura maior */
-  height: 180px;  /* altura maior */
+  width: 120px;   /* imagem menor */
+  height: 100px;
   object-fit: cover;
   border-radius: 6px;
   background-color: #f0f0f0;
-  margin-right: 20px; /* espaço entre imagem e texto */
+  margin-right: 12px;
 }
-
 .card-content {
   flex: 1;
 }
-
 .card-content h3 {
   color: #002d72;
-  font-size: 18px;
-  margin: 0 0 6px;
+  font-size: 14px; /* fonte menor */
+  margin: 0 0 4px;
 }
-
 .card-content p {
   color: #555;
-  font-size: 14px;
-  margin-bottom: 8px;
+  font-size: 12px; /* fonte menor */
+  margin-bottom: 4px;
 }
-
-.card-content .price {
-  color: #f57f17;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 6px 0;
+.card-content .price-original {
+  color: #999;
+  font-size: 12px;
+  text-decoration: line-through;
 }
-
-.card-content .promo {
-  color: #fff;
-  background-color: #e74c3c;
+.card-content .discount {
+  color: #e74c3c;
   font-size: 12px;
   font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 4px;
-  margin: 6px 0;
-  display: inline-block;
+  margin-left: 6px;
 }
-
+.card-content .price-final {
+  color: #f57f17;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 4px 0;
+}
 .buy-button {
   display: inline-block;
   background-color: #002d72;
   color: #ffe600;
   text-decoration: none;
-  padding: 6px 12px;
+  padding: 4px 8px;
   border-radius: 4px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
   transition: background-color 0.2s ease;
 }
-
 .buy-button:hover { background-color: #0044aa; }
 
 
