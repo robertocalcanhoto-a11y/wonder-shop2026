@@ -165,11 +165,9 @@
   <div class="header-middle">
     <img src="https://github.com/robertocalcanhoto-a11y/wonder-shop2026/main/logowondershop.png" alt="Logo Wonder Shop">
   </div>
-  
-  <!-- New image on the right side of Wonder Shop logo -->
+
   <div class="header-right">
   <img src="https://raw.githubusercontent.com/robertocalcanhoto-a11y/wonder-shop2026/main/aviaologo.png" alt="Avialo Logo">
-
   </div>
   
   <div class="header-spacer"></div>
