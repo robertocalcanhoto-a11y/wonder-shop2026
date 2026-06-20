@@ -21,11 +21,13 @@
       gap: 20px;
       border-bottom: 3px solid #002d72;
     }
-    header img {
+    .header-right img {
       max-height: 90px;
       width: auto;
       object-fit: contain;
       display: block;
+}
+
     }
     .header-title {
       flex: 1;
@@ -154,17 +156,26 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo-area">
-      <img src="https://raw.githubusercontent.com/robertocalcanhoto-a11y/wonder-shop2026/main/logomercadolivre.png" alt="Logo Mercado Livre">
-    </div>
-    <div class="header-title">Mercado Livre e afiliada Wonder Shop</div>
-    <div class="header-middle">
-      <img src="https://raw.githubusercontent.com/robertocalcanhoto-a11y/wonder-shop2026/main/logowondershop.png" alt="Logo Wonder Shop">
-    </div>
-    <div class="header-spacer"></div>
-  </header>
+ <!-- HEADER -->
+<header>
+  <div class="logo-area">
+    <img src="https://raw.githubusercontent.com/robertocalcanhoto-a11y/wonder-shop2026/main/logomercadolivre.png" alt="Logo Mercado Livre">
+  </div>
+  
+  <div class="header-title">Mercado Livre e afiliada Wonder Shop</div>
+  
+  <div class="header-middle">
+    <img src="https://raw.githubusercontent.com/robertocalcanhoto-a11y/wonder-shop2026/main/logowondershop.png" alt="Logo Wonder Shop">
+  </div>
+  
+  <!-- New image on the right side of Wonder Shop logo -->
+  <div class="header-right">
+    <img src="https://github.com/robertocalcanhoto-a11y/wonder-shop2026/blob/main/aviaologo.png" alt="New Image">
+  </div>
+  
+  <div class="header-spacer"></div>
+</header>
+
 
   <!-- Aqui continuam suas seções de categorias e cards -->
   <!-- category-section, category-grid, cards etc. -->
