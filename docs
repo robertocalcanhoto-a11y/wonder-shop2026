@@ -69,6 +69,17 @@
 }
 
 /* === PRODUCT CARD === */
+.category-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* cada card ocupa toda a largura */
+  gap: 20px;
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 20px;
+}
+
 .card {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -141,9 +152,7 @@
 }
 
 .buy-button:hover { background-color: #0044aa; }
-
-
-    /* === RESPONSIVE === */
+  /* === RESPONSIVE === */
     @media (max-width: 1200px) {
       .category-grid { grid-template-columns: repeat(3, 1fr); }
     }
