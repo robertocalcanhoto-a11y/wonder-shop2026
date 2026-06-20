@@ -26,8 +26,6 @@
       width: auto;
       object-fit: contain;
       display: block;
-
-
     }
     .header-title {
       flex: 1;
