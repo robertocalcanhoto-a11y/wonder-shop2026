@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mercado Livre e afiliada Wonder Shop</title>
-
   <style>
    .cards-container {
   display: grid;
@@ -23,36 +22,41 @@
   text-align: center;
 }
 
+    }
+
     /* === HEADER === */
     header {
       background-color: #ffe600;
       padding: 16px 30px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 20px;
       border-bottom: 3px solid #002d72;
-      max-width: 1100px;
-      margin: 0 auto;
     }
-    .logo-area img,
-    .header-middle img,
     .header-right img {
-      max-height: 70px;
+      max-height: 90px;
+      width: auto;
       object-fit: contain;
       display: block;
+}
+
     }
     .header-title {
       flex: 1;
       text-align: center;
-      font-size: 22px;
+      font-size: 26px;
       font-weight: bold;
       color: #002d72;
       letter-spacing: 0.5px;
     }
+    .header-spacer {
+      width: 180px;
+      flex-shrink: 1;
+    }
 
     /* === CATEGORY SECTION === */
     .category-section {
-      max-width: 1100px;
+      max-width: 1240px;
       margin: 30px auto;
       padding: 0 20px;
     }
@@ -67,41 +71,15 @@
     }
     .category-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
       background-color: #fff;
       border: 2px solid #e0e0e0;
       border-top: none;
       border-radius: 0 0 8px 8px;
-      padding: 20px;
+      padding: 14px;
     }
 
-
-   /* === CATEGORY SECTION === */
-    .category-section {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    .category-title {
-      background-color: #002d72;
-      color: #ffe600;
-      padding: 14px 24px;
-      font-size: 20px;
-      font-weight: bold;
-      border-radius: 8px 8px 0 0;
-      letter-spacing: 0.5px;
-    }
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
-      gap: 20px;
-      background-color: #fff;
-      border: 2px solid #e0e0e0;
-      border-top: none;
-      border-radius: 0 0 8px 8px;
-      padding: 20px;
-    }
 
     /* === PRODUCT CARD === */
     .card {
