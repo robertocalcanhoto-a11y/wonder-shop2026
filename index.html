@@ -208,7 +208,26 @@
   </div>
 </section>
 <script>
+<!-- Produtos -->
+<section class="section">
+  <div class="section-title">Produtos em destaque</div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="produto1.jpg" alt="Produto 1">
+      <div class="card-content">
+        <h3>Produto 1</h3>
+        <p>Descrição breve.</p>
+        <span class="price-original">R$ 200,00</span>
+        <span class="discount">-15%</span>
+        <div class="price-final"></div> <!-- será preenchido pelo JS -->
+        <a href="#" class="buy-button">Comprar</a>
+      </div>
+    </div>
+    <!-- Repita para outros produtos -->
+  </div>
+</section>
 <!-- SCRIPT DE CÁLCULO -->
+<script>
   function calcularPrecoFinal() {
     const produtos = document.querySelectorAll('.product-card');
     produtos.forEach(card => {
@@ -228,8 +247,7 @@
     });
   }
 
-  window.onload = calcularPrecoFinal 
-  <script>
+  window.onload = calcularPrecoFinal;
+</script>
 </body>
-  
 </html>
