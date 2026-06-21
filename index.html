@@ -123,7 +123,7 @@
           <h3>Parafusaeira</h3>
           <p>Furadeira C/ 2 Baterias Maleta Kit Completo Led Eixo Flexível Vários Níveis Torque Simake.</p>
           <span class="price-original">R$ 299,00</span>
-          <span class="discount">-68%</span>
+          <span class="discount">-10%</span>
           <div class="price-final">R$ 1700,00</div>
           <a href="https://meli.la/2mCV7SS" class="buy-button">Comprar</a>
         </div>
@@ -188,5 +188,48 @@
       <!-- Adicione mais produtos de Acessórios -->
     </div>
   </section>
+<script>
+<!-- Produtos -->
+<section class="section">
+  <div class="section-title">Produtos em destaque</div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="produto1.jpg" alt="Produto 1">
+      <div class="card-content">
+        <h3>Produto 1</h3>
+        <p>Descrição breve.</p>
+        <span class="price-original">R$ 200,00</span>
+        <span class="discount">-15%</span>
+        <div class="price-final"></div> <!-- será preenchido pelo JS -->
+        <a href="#" class="buy-button">Comprar</a>
+      </div>
+    </div>
+    <!-- Repita para outros produtos -->
+  </div>
+</section>
+<script>
+<!-- SCRIPT DE CÁLCULO -->
+  function calcularPrecoFinal() {
+    const produtos = document.querySelectorAll('.product-card');
+    produtos.forEach(card => {
+      const original = card.querySelector('.price-original');
+      const desconto = card.querySelector('.discount');
+      const final = card.querySelector('.price-final');
+
+      if (original && desconto && final) {
+        const precoOriginal = parseFloat(original.textContent.replace('R$', '').replace(',', '.'));
+        const percentual = parseFloat(desconto.textContent.replace('-', '').replace('%', ''));
+
+        if (!isNaN(precoOriginal) && !isNaN(percentual)) {
+          const precoFinal = precoOriginal * (1 - percentual / 100);
+          final.textContent = 'R$ ' + precoFinal.toFixed(2).replace('.', ',');
+        }
+      }
+    });
+  }
+
+  window.onload = calcularPrecoFinal 
+  <script>
 </body>
+  
 </html>
