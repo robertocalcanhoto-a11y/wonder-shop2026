@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mercado Livre e afiliada Wonder Shop</title>
   <style>
-    /* Aqui dentro vai apenas CSS */
     body {
       font-family: Arial, sans-serif;
       background: #f4f4f4;
       margin: 0;
     }
 
+    /* HEADER */
     header {
       background-color: #ffe600;
       padding: 16px 30px;
       display: flex;
       align-items: center;
-      gap: 20px;
       border-bottom: 3px solid #002d72;
     }
     .header-title {
@@ -32,11 +31,98 @@
       width: auto;
     }
 
+    /* CATEGORY SECTION */
     .category-section {
       max-width: 1240px;
       margin: 30px auto;
       padding: 0 20px;
     }
+    .category-title {
+      background-color: #002d72;
+      color: #ffe600;
+      padding: 14px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 8px 8px 0 0;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
+      gap: 16px;
+      background: #fff;
+      border: 2px solid #e0e0e0;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      padding: 14px;
+    }
+
+    /* CATEGORY CARD */
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      text-align: center;
+      padding: 10px;
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .card h3 {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 900px) {
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .category-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-title">Mercado Livre e afiliada Wonder Shop</div>
+    <div class="header-right"><img src="logo.png" alt="Logo"></div>
+  </header>
+
+  <!-- CATEGORY SECTION -->
+  <section class="category-section">
+    <div class="category-title">Produtos em destaque</div>
+    <div class="category-grid">
+      <div class="card">
+        <img src="moda.jpg" alt="Moda">
+        <h3>Moda</h3>
+      </div>
+      <div class="card">
+        <img src="decoracao.jpg" alt="Decoração">
+        <h3>Decoração</h3>
+      </div>
+      <div class="card">
+        <img src="eletronicos.jpg" alt="Eletrônicos">
+        <h3>Eletrônicos</h3>
+      </div>
+      <div class="card">
+        <img src="esporte.jpg" alt="Esporte">
+        <h3>Esporte</h3>
+      </div>
+      <div class="card">
+        <img src="livros.jpg" alt="Livros">
+        <h3>Livros</h3>
+      </div>
+      <div class="card">
+        <img src="beleza.jpg" alt="Beleza">
+        <h3>Beleza</h3>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
     .category-title {
       background-color: #002d72;
       color: #ffe600;
