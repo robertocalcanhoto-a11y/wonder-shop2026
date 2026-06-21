@@ -3,71 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Layout de 6 Cards</title>
+  <title>Mercado Livre e afiliada Wonder Shop</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+   .cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
+  gap: 16px;
+  padding: 20px;
+  max-width: 1200px; /* largura máxima para centralizar */
+  margin: auto;
+}
 
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
-      gap: 16px;
-      padding: 20px;
-      max-width: 1200px; /* largura máxima para centralizar */
-      margin: auto;
-    }
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 16px;
+  text-align: center;
+}
 
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 16px;
+    /* === HEADER === */
+    header {
+      background-color: #ffe600;
+      padding: 16px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 3px solid #002d72;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .logo-area img,
+    .header-middle img,
+    .header-right img {
+      max-height: 70px;
+      object-fit: contain;
+      display: block;
+    }
+    .header-title {
+      flex: 1;
       text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #002d72;
+      letter-spacing: 0.5px;
     }
 
-    .card h3 {
-      margin-top: 0;
-      color: #333;
+    /* === CATEGORY SECTION === */
+    .category-section {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .category-title {
+      background-color: #002d72;
+      color: #ffe600;
+      padding: 14px 24px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 8px 8px 0 0;
+      letter-spacing: 0.5px;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
+      gap: 20px;
+      background-color: #fff;
+      border: 2px solid #e0e0e0;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      padding: 20px;
     }
 
-    .card p {
-      color: #666;
-    }
-  </style>
-</head>
-<body>
-  <div class="cards-container">
-    <div class="card">
-      <h3>Card 1</h3>
-      <p>Conteúdo do primeiro card.</p>
-    </div>
-    <div class="card">
-      <h3>Card 2</h3>
-      <p>Conteúdo do segundo card.</p>
-    </div>
-    <div class="card">
-      <h3>Card 3</h3>
-      <p>Conteúdo do terceiro card.</p>
-    </div>
-    <div class="card">
-      <h3>Card 4</h3>
-      <p>Conteúdo do quarto card.</p>
-    </div>
-    <div class="card">
-      <h3>Card 5</h3>
-      <p>Conteúdo do quinto card.</p>
-    </div>
-    <div class="card">
-      <h3>Card 6</h3>
-      <p>Conteúdo do sexto card.</p>
-    </div>
-  </div>
-</body>
-</html>
 
    /* === CATEGORY SECTION === */
     .category-section {
