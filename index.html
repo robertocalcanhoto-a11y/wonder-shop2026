@@ -56,24 +56,45 @@
       padding: 14px;
     }
 
-    /* CATEGORY CARD */
+    /* PRODUCT CARD */
     .card {
       background: #fff;
       border: 1px solid #ddd;
       border-radius: 6px;
-      text-align: center;
+      display: flex;
+      flex-direction: row; /* imagem à esquerda, texto à direita */
+      align-items: flex-start;
       padding: 10px;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .card:hover {
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
     }
     .card img {
-      width: 100%;
-      height: 150px;
+      width: 120px;
+      height: 100px;
       object-fit: cover;
       border-radius: 6px;
+      margin-right: 10px;
     }
-    .card h3 {
-      font-size: 14px;
-      margin-top: 8px;
+    .card-content { flex: 1; }
+    .card-content h3 { font-size: 14px; margin-bottom: 4px; }
+    .card-content p { font-size: 12px; margin-bottom: 4px; }
+    .price-original { font-size: 12px; text-decoration: line-through; color: #999; }
+    .discount { font-size: 12px; font-weight: bold; margin-left: 6px; color: #e74c3c; }
+    .price-final { font-size: 13px; font-weight: bold; margin: 4px 0; color: #f57f17; }
+    .buy-button {
+      font-size: 12px;
+      padding: 4px 8px;
+      background-color: #002d72;
+      color: #ffe600;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
     }
+    .buy-button:hover { background-color: #0044aa; }
 
     /* RESPONSIVO */
     @media (max-width: 900px) {
@@ -96,114 +117,71 @@
     <div class="category-title">Produtos em destaque</div>
     <div class="category-grid">
       <div class="card">
-        <img src="moda.jpg" alt="Moda">
-        <h3>Moda</h3>
-      </div>
-      <div class="card">
-        <img src="decoracao.jpg" alt="Decoração">
-        <h3>Decoração</h3>
-      </div>
-      <div class="card">
-        <img src="eletronicos.jpg" alt="Eletrônicos">
-        <h3>Eletrônicos</h3>
-      </div>
-      <div class="card">
-        <img src="esporte.jpg" alt="Esporte">
-        <h3>Esporte</h3>
-      </div>
-      <div class="card">
-        <img src="livros.jpg" alt="Livros">
-        <h3>Livros</h3>
-      </div>
-      <div class="card">
-        <img src="beleza.jpg" alt="Beleza">
-        <h3>Beleza</h3>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
-    .category-title {
-      background-color: #002d72;
-      color: #ffe600;
-      padding: 14px;
-      font-size: 20px;
-      font-weight: bold;
-      border-radius: 8px 8px 0 0;
-    }
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      background: #fff;
-      border: 2px solid #e0e0e0;
-      border-top: none;
-      border-radius: 0 0 8px 8px;
-      padding: 14px;
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      padding: 10px;
-      transition: 0.2s;
-    }
-    .card img {
-      width: 120px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-right: 10px;
-    }
-    .card-content h3 { font-size: 14px; margin-bottom: 4px; }
-    .card-content p { font-size: 12px; margin-bottom: 4px; }
-    .price-original { font-size: 12px; text-decoration: line-through; color: #999; }
-    .discount { font-size: 12px; font-weight: bold; margin-left: 6px; color: #e74c3c; }
-    .price-final { font-size: 13px; font-weight: bold; margin: 4px 0; color: #f57f17; }
-    .buy-button {
-      font-size: 12px;
-      padding: 4px 8px;
-      background-color: #002d72;
-      color: #ffe600;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-    .buy-button:hover { background-color: #0044aa; }
-
-    @media (max-width: 900px) {
-      .category-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 600px) {
-      .category-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="header-title">Mercado Livre e afiliada Wonder Shop</div>
-    <div class="header-right"><img src="logo.png" alt="Logo"></div>
-  </header>
-
-  <section class="category-section">
-    <div class="category-title">Produtos em destaque</div>
-    <div class="category-grid">
-      <div class="card">
         <img src="produto1.jpg" alt="Produto 1">
         <div class="card-content">
           <h3>Produto 1</h3>
-          <p>Descrição breve</p>
+          <p>Descrição breve do produto.</p>
           <span class="price-original">R$ 100,00</span>
           <span class="discount">-20%</span>
           <div class="price-final">R$ 80,00</div>
           <a href="#" class="buy-button">Comprar</a>
         </div>
       </div>
-      <!-- Repita para os outros 5 cards -->
+      <div class="card">
+        <img src="produto2.jpg" alt="Produto 2">
+        <div class="card-content">
+          <h3>Produto 2</h3>
+          <p>Descrição breve do produto.</p>
+          <span class="price-original">R$ 150,00</span>
+          <span class="discount">-10%</span>
+          <div class="price-final">R$ 135,00</div>
+          <a href="#" class="buy-button">Comprar</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="produto3.jpg" alt="Produto 3">
+        <div class="card-content">
+          <h3>Produto 3</h3>
+          <p>Descrição breve do produto.</p>
+          <span class="price-original">R$ 200,00</span>
+          <span class="discount">-15%</span>
+          <div class="price-final">R$ 170,00</div>
+          <a href="#" class="buy-button">Comprar</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="produto4.jpg" alt="Produto 4">
+        <div class="card-content">
+          <h3>Produto 4</h3>
+          <p>Descrição breve do produto.</p>
+          <span class="price-original">R$ 80,00</span>
+          <span class="discount">-5%</span>
+          <div class="price-final">R$ 76,00</div>
+          <a href="#" class="buy-button">Comprar</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="produto5.jpg" alt="Produto 5">
+        <div class="card-content">
+          <h3>Produto 5</h3>
+          <p>Descrição breve do produto.</p>
+          <span class="price-original">R$ 300,00</span>
+          <span class="discount">-25%</span>
+          <div class="price-final">R$ 225,00</div>
+          <a href="#" class="buy-button">Comprar</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="produto6.jpg" alt="Produto 6">
+        <div class="card-content">
+          <h3>Produto 6</h3>
+          <p>Descrição breve do produto.</p>
+          <span class="price-original">R$ 50,00</span>
+          <span class="discount">-10%</span>
+          <div class="price-final">R$ 45,00</div>
+          <a href="#" class="buy-button">Comprar</a>
+        </div>
+      </div>
     </div>
   </section>
 </body>
