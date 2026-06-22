@@ -14,14 +14,28 @@
     /* HEADER */
     header {
       background-color: #ffe600;
+      border-bottom: 3px solid #002d72;
+    }
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
       padding: 16px 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 3px solid #002d72;
     }
-    .header-left img { max-height: 60px; }
-    .header-center { display: flex; align-items: center; gap: 10px; }
+    .header-left img,
+    .header-center img,
+    .header-right img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+    .header-center {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
     .header-center h1 {
       font-size: 22px;
       font-weight: bold;
@@ -29,8 +43,6 @@
       margin: 0;
       text-align: center;
     }
-    .header-center img { max-height: 50px; }
-    .header-right img { max-height: 60px; }
 
     /* SECTION BASE */
     .section {
@@ -105,12 +117,14 @@
 <body>
   <!-- HEADER -->
   <header>
-    <div class="header-left"><img src="logomercadolivre.png" alt="Mercado Livre"></div>
-    <div class="header-center">
-      <h1>Mercado Livre e afiliada Wonder Shop</h1>
-      <img src="logowondershop.png" alt="Wonder Shop">
+    <div class="header-container">
+      <div class="header-left"><img src="logomercadolivre.png" alt="Mercado Livre"></div>
+      <div class="header-center">
+        <h1>Mercado Livre e afiliada Wonder Shop</h1>
+        <img src="logowondershop.png" alt="Wonder Shop">
+      </div>
+      <div class="header-right"><img src="aviaologo.png" alt="Avião"></div>
     </div>
-    <div class="header-right"><img src="aviaologo.png" alt="Avião"></div>
   </header>
 
   <!-- ELETRÔNICOS -->
@@ -118,17 +132,17 @@
     <div class="section-title">Eletrônicos</div>
     <div class="product-grid">
       <div class="product-card">
-        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_641541-MLA111608975062_062026-F.webp" alt="Produto Eletrônico 1">
+        <img src="eletronico1.jpg" alt="Smartphone X">
         <div class="card-content">
-          <h3>Parafusaeira</h3>
-          <p>Furadeira C/ 2 Baterias Maleta Kit Completo Led Eixo Flexível Vários Níveis Torque Simake.</p>
-          <span class="price-original">R$ 299,00</span>
-          <span class="discount">-10%</span>
-          <div class="price-final">R$ 1700,00</div>
-          <a href="https://meli.la/2mCV7SS" class="buy-button">Comprar</a>
+          <h3>Smartphone X</h3>
+          <p>Descrição breve.</p>
+          <span class="price-original">R$ 2000,00</span>
+          <span class="discount">-15%</span>
+          <div class="price-final"></div>
+          <a href="#" class="buy-button">Comprar</a>
         </div>
       </div>
-      <!-- Adicione mais produtos de Eletrônicos -->
+      <!-- Adicione mais produtos -->
     </div>
   </section>
 
@@ -137,17 +151,16 @@
     <div class="section-title">Moda Trendy</div>
     <div class="product-grid">
       <div class="product-card">
-        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_925937-MLB111341357133_052026-F.webp" alt="Produto Moda 1">
+        <img src="moda1.jpg" alt="Camisa Fashion">
         <div class="card-content">
-          <h3>Kimono</h3>
-          <p>Xadrez Tricot Feminino Sobretudo Grosso Inverno.</p>
-          <span class="price-original">R$ 78,00</span>
-          <span class="discount">-36%</span>
-          <div class="price-final">R$ 96,00</div>
-          <a href="https://meli.la/13UnX5H" class="buy-button">Comprar</a>
+          <h3>Camisa Fashion</h3>
+          <p>Descrição breve.</p>
+          <span class="price-original">R$ 120,00</span>
+          <span class="discount">-20%</span>
+          <div class="price-final"></div>
+          <a href="#" class="buy-button">Comprar</a>
         </div>
       </div>
-      <!-- Adicione mais produtos de Moda Trendy -->
     </div>
   </section>
 
@@ -156,17 +169,16 @@
     <div class="section-title">Decoração</div>
     <div class="product-grid">
       <div class="product-card">
-        <img src="decoracao1.jpg" alt="Produto Decoração 1">
+        <img src="decoracao1.jpg" alt="Luminária Moderna">
         <div class="card-content">
           <h3>Luminária Moderna</h3>
           <p>Descrição breve.</p>
           <span class="price-original">R$ 300,00</span>
           <span class="discount">-10%</span>
-          <div class="price-final">R$ 270,00</div>
+          <div class="price-final"></div>
           <a href="#" class="buy-button">Comprar</a>
         </div>
       </div>
-      <!-- Adicione mais produtos de Decoração -->
     </div>
   </section>
 
@@ -175,81 +187,40 @@
     <div class="section-title">Acessórios</div>
     <div class="product-grid">
       <div class="product-card">
-        <img src="acessorio1.jpg" alt="Produto Acessório 1">
+        <img src="acessorio1.jpg" alt="Relógio Estiloso">
         <div class="card-content">
           <h3>Relógio Estiloso</h3>
           <p>Descrição breve.</p>
           <span class="price-original">R$ 250,00</span>
           <span class="discount">-25%</span>
-          <div class="price-final">R$ 187,00</div>
+          <div class="price-final"></div>
           <a href="#" class="buy-button">Comprar</a>
         </div>
       </div>
-      <!-- Adicione mais produtos de Acessórios -->
     </div>
   </section>
-<script>
-<!-- Produtos -->
-<section class="section">
-  <div class="section-title">Produtos em destaque</div>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="produto1.jpg" alt="Produto 1">
-      <div class="card-content">
-        <h3>Produto 1</h3>
-        <p>Descrição breve.</p>
-        <span class="price-original">R$ 200,00</span>
-        <span class="discount">-15%</span>
-        <div class="price-final"></div> <!-- será preenchido pelo JS -->
-        <a href="#" class="buy-button">Comprar</a>
-      </div>
-    </div>
-    <!-- Repita para outros produtos -->
-  </div>
-</section>
-<script>
-<!-- Produtos -->
-<section class="section">
-  <div class="section-title">Produtos em destaque</div>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="produto1.jpg" alt="Produto 1">
-      <div class="card-content">
-        <h3>Produto 1</h3>
-        <p>Descrição breve.</p>
-        <span class="price-original">R$ 200,00</span>
-        <span class="discount">-15%</span>
-        <div class="price-final"></div> <!-- será preenchido pelo JS -->
-        <a href="#" class="buy-button">Comprar</a>
-      </div>
-    </div>
-    <!-- Repita para outros produtos -->
-  </div>
-</section>
-<!-- Última seção de produtos -->
-</section>
-<!-- SCRIPT DE CÁLCULO -->
-<script>
-  function calcularPrecoFinal() {
-    const produtos = document.querySelectorAll('.product-card');
-    produtos.forEach(card => {
-      const original = card.querySelector('.price-original');
-      const desconto = card.querySelector('.discount');
-      const final = card.querySelector('.price-final');
 
-      if (original && desconto && final) {
-        const precoOriginal = parseFloat(original.textContent.replace('R$', '').replace(',', '.'));
-        const percentual = parseFloat(desconto.textContent.replace('-', '').replace('%', ''));
+  <!-- SCRIPT DE CÁLCULO -->
+  <script>
+    function calcularPrecoFinal() {
+      const produtos = document.querySelectorAll('.product-card');
+      produtos.forEach(card => {
+        const original = card.querySelector('.price-original');
+        const desconto = card.querySelector('.discount');
+        const final = card.querySelector('.price-final');
 
-        if (!isNaN(precoOriginal) && !isNaN(percentual)) {
-          const precoFinal = precoOriginal * (1 - percentual / 100);
-          final.textContent = 'R$ ' + precoFinal.toFixed(2).replace('.', ',');
+        if (original && desconto && final) {
+          const precoOriginal = parseFloat(original.textContent.replace('R$', '').replace('.', '').replace(',', '.'));
+          const percentual = parseFloat(desconto.textContent.replace('-', '').replace('%', ''));
+
+          if (!isNaN(precoOriginal) && !isNaN(percentual)) {
+            const precoFinal = precoOriginal * (1 - percentual / 100);
+            final.textContent = 'R$ ' + precoFinal.toFixed(2).replace('.', ',');
+          }
         }
-      }
-    });
-  }
-
-  window.onload = calcularPrecoFinal;
-</script>
+      });
+    }
+    window.onload = calcularPrecoFinal;
+  </script>
 </body>
 </html>
