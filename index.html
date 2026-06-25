@@ -274,16 +274,17 @@
     </form>
   </div>
 
-  <!-- Script para preencher o select e atualizar o placeholder -->
   <script>
+    // 1. Lista de países e placeholders
     var mockPlaceholders = [
       { countryCode: 'US', placeholder: '+1 000 000 0000', helpText: 'Include the US country code +1 before the phone number' },
       { countryCode: 'BR', placeholder: '+55 00 00000-0000', helpText: 'Inclua o código do Brasil +55 antes do número' },
       { countryCode: 'GB', placeholder: '+44 0000 000000', helpText: 'Include the GB country code +44 before the phone number' },
       { countryCode: 'FR', placeholder: '+33 0 00 00 00 00', helpText: 'Incluez le code pays FR +33 avant le numéro de téléphone' }
-      // ...adicione os demais países conforme necessário
+      // ...adicione os demais países
     ];
 
+    // 2. Preenche o select
     function populateCountries() {
       var select = document.getElementById('country-select');
       mockPlaceholders.forEach(function(p) {
@@ -294,6 +295,7 @@
       });
     }
 
+    // 3. Atualiza placeholder do telefone
     function updatePhonePlaceholder() {
       var select = document.getElementById('country-select');
       var phoneInput = document.getElementById('phone');
@@ -305,12 +307,15 @@
       }
     }
 
+    // 4. Listener de mudança
     document.getElementById('country-select').addEventListener('change', updatePhonePlaceholder);
 
+    // 5. Executa preenchimento inicial
     populateCountries();
   </script>
 </body>
 </html>
+
 
       
             var mockPlaceholders = [
