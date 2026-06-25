@@ -218,7 +218,7 @@
   </section>
 <!-- FORMULÁRIO MAILCHIMP -->
 <section class="section">
-  <div class="section-title newsletter-title">Assine nossa Newsletter</div>
+  <div class="newsletter-title">Assine nossa Newsletter</div>
   <div class="container newsletter-container">
     <div class="logo">
       <img src="logo-wondershop.png" alt="Wonder Shop Logo">
@@ -238,6 +238,8 @@
     color: #002d72;            /* azul Mercado Livre */
     text-align: center;
     font-weight: bold;
+    padding: 14px;
+    border-radius: 8px 8px 0 0;
   }
 
   /* Container azul */
@@ -246,19 +248,39 @@
     color: #fff;
     margin: 0 auto;
     justify-content: center;
-    border-radius: 8px;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
 
-  .newsletter-container form input,
-  .newsletter-container form button {
+  .newsletter-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .newsletter-container form input {
     width: 100%;
     max-width: 300px;
+    padding: 10px;
   }
 
   .newsletter-container form button {
-    background-color: #ffe600; /* botão amarelo */
-    color: #002d72;            /* texto azul */
+    background-color: #ffe600; /* amarelo */
+    color: #002d72;            /* azul */
     font-weight: bold;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  /* Logo autoajustável */
+  .logo img {
+    max-width: 100%;
+    height: auto;
   }
 </style>
 
