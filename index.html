@@ -216,23 +216,67 @@
       <div class="product-card"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_702598-MLA99992357553_112025-F.webp"><div class="card-content"><h3>Mochila Raqueteira</h3><p>Beach Tennis, Bolsa De Tênis Transversal Para Raquete, Bolsa De Padel Grande Com Compartimento Separado, Antirroubo E Impermeável, Versátil Para Tênis, Badminton, Ytonet 1340 Preto.</p><span class="price-original">R$ 200,00</span><span class="discount">-22%</span><div class="price-final"></div><a href="https://meli.la/31NjG2k" class="buy-button">Comprar</a></div></div>
     </div>
   </section>
+<!-- FORMULÁRIO MAILCHIMP -->
+<section class="section">
+  <div class="section-title">Assine nossa Newsletter</div>
+  <div class="container">
+    <div class="logo">
+      <img src="logo-wondershop.png" alt="Wonder Shop Logo">
+    </div>
+    <form>
+      <input type="text" placeholder="Nome">
+      <input type="email" placeholder="Email">
+      <select id="country-select">
+        <option value="">Selecione o país</option>
+      </select>
+      <input type="tel" id="phone" placeholder="Telefone">
+      <div id="help-text" style="font-size:12px;color:#666;margin-top:5px;"></div>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
 
-  <!-- FORMULÁRIO MAILCHIMP -->
-  <section class="section">
-    <div class="section-title">Assine nossa Newsletter</div>
-    <div class="container">
-      <div class="logo">
-        <img src="logowondershop.png" alt="Wonder Shop Logo">
-      </div>
-      <form>
-        <input type="text" placeholder="Nome">
-        <input type="email" placeholder="Email">
-        <select id="country-select">
-          <option value="">Selecione o país</option>
-        </select>
-        <input type="tel" id="phone" placeholder="Telefone">
-        <div id="help-text" style="font-size:12px;color:#666;margin-top:5px;"></div>
-        <button type="submit">Enviar</button>
+<!-- CSS extra para centralizar -->
+<style>
+  .section .container {
+    margin: 0 auto;
+    justify-content: center;
+  }
+</style>
+
+<!-- SCRIPT MAILCHIMP -->
+<script>
+  var mockPlaceholders = [
+    { countryCode: 'US', placeholder: '+1 000 000 0000', helpText: 'Include the US country code +1 before the phone number' },
+    { countryCode: 'BR', placeholder: '+55 00 00000-0000', helpText: 'Inclua o código do Brasil +55 antes do número' },
+    { countryCode: 'GB', placeholder: '+44 0000 000000', helpText: 'Include the GB country code +44 before the phone number' },
+    { countryCode: 'FR', placeholder: '+33 0 00 00 00 00', helpText: 'Incluez le code pays FR +33 avant le numéro de téléphone' }
+    // ... continue com os demais países
+  ];
+
+  function populateCountries() {
+    var select = document.getElementById('country-select');
+    mockPlaceholders.forEach(function(p) {
+      var option = document.createElement('option');
+      option.value = p.countryCode;
+      option.textContent = p.countryCode;
+      select.appendChild(option);
+    });
+  }
+
+  function updatePhonePlaceholder() {
+    var select = document.getElementById('country-select');
+    var phoneInput = document.getElementById('phone');
+    var helpDiv = document.getElementById('help-text');
+    var selected = mockPlaceholders.find(p => p.countryCode === select.value);
+    phoneInput.placeholder = selected ? selected.placeholder : 'Telefone';
+    helpDiv.textContent = selected ? selected.helpText : '';
+  }
+
+  document.getElementById('country-select').addEventListener('change', updatePhonePlaceholder);
+  populateCountries();
+</script>
+
       </form>
     </div>
   </section>
