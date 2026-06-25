@@ -294,31 +294,9 @@
 }(document,"script","https://chimpstatic.com/mcjs-connected/js/users/9d408a1bef564e235e7adef20/587a131962a98be0642318d91.js");
 
 </script>
- function populateCountries() {
-    var select = document.getElementById('country-select');
-    mockPlaceholders.forEach(function(p) {
-      var option = document.createElement('option');
-      option.value = p.countryCode;
-      option.textContent = p.countryCode;
-      select.appendChild(option);
-    });
-  }
- function updatePhonePlaceholder() {
-    var select = document.getElementById('country-select');
-    var phoneInput = document.getElementById('phone');
-    var helpDiv = document.getElementById('help-text');
-    var selected = mockPlaceholders.find(p => p.countryCode === select.value);
-    phoneInput.placeholder = selected ? selected.placeholder : 'Telefone';
-    helpDiv.textContent = selected ? selected.helpText : '';
-  }
 
-  document.getElementById('country-select').addEventListener('change', updatePhonePlaceholder);
-  populateCountries();
-</script>
-
-      </form>
-    </div>
-  </section>
+</body>
+</html>
 
   <!-- SCRIPT DE CÁLCULO DE PREÇOS -->
   <script>
