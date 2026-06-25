@@ -266,57 +266,52 @@
     <form>
       <input type="text" placeholder="Nome">
       <input type="email" placeholder="Email">
-      <select>
+      <select id="country-select">
         <option value="">Selecione o país</option>
-        <!-- opções geradas dinamicamente pelo script da Mailchimp -->
       </select>
+      <input type="tel" id="phone" placeholder="Telefone">
       <button type="submit">Enviar</button>
     </form>
   </div>
 
-  <!-- Script original da Mailchimp adaptado -->
+  <!-- Script para preencher o select e atualizar o placeholder -->
   <script>
-    function generateDropdownOptions(smsProgramData) {
-      if (!smsProgramData || smsProgramData.length === 0) {
-        return '';
-      }
+    var mockPlaceholders = [
+      { countryCode: 'US', placeholder: '+1 000 000 0000', helpText: 'Include the US country code +1 before the phone number' },
+      { countryCode: 'BR', placeholder: '+55 00 00000-0000', helpText: 'Inclua o código do Brasil +55 antes do número' },
+      { countryCode: 'GB', placeholder: '+44 0000 000000', helpText: 'Include the GB country code +44 before the phone number' },
+      { countryCode: 'FR', placeholder: '+33 0 00 00 00 00', helpText: 'Incluez le code pays FR +33 avant le numéro de téléphone' }
+      // ...adicione os demais países conforme necessário
+    ];
 
-      var programs = false
-        ? smsProgramData.filter(function(p, i, arr) {
-            return arr.findIndex(function(q) { return q.countryCode === p.countryCode; }) === i;
-          })
-        : smsProgramData;
-      
-      return programs.map(program => {
-        const flag = getCountryUnicodeFlag(program.countryCode);
-        const countryName = getCountryName(program.countryCode);
-        const callingCode = program.countryCallingCode || '';
-        const sanitizedCountryCode = sanitizeHtml(program.countryCode || '');
-        const sanitizedCountryName = sanitizeHtml(countryName || '');
-        const sanitizedCallingCode = sanitizeHtml(callingCode || '');
-        return '<option value="' + sanitizedCountryCode + '">' + sanitizedCountryName + ' ' + sanitizedCallingCode + '</option>';
-      }).join('');
+    function populateCountries() {
+      var select = document.getElementById('country-select');
+      mockPlaceholders.forEach(function(p) {
+        var option = document.createElement('option');
+        option.value = p.countryCode;
+        option.textContent = p.countryCode;
+        select.appendChild(option);
+      });
     }
 
-    function getCountryName(countryCode) {
-      if (window.MC?.smsPhoneData?.smsProgramDataCountryNames && Array.isArray(window.MC.smsPhoneData.smsProgramDataCountryNames)) {
-        for (let i = 0; i < window.MC.smsPhoneData.smsProgramDataCountryNames.length; i++) {
-          if (window.MC.smsPhoneData.smsProgramDataCountryNames[i].code === countryCode) {
-            return window.MC.smsPhoneData.smsProgramDataCountryNames[i].name;
-          }
-        }
+    function updatePhonePlaceholder() {
+      var select = document.getElementById('country-select');
+      var phoneInput = document.getElementById('phone');
+      var selected = mockPlaceholders.find(p => p.countryCode === select.value);
+      if (selected) {
+        phoneInput.placeholder = selected.placeholder;
+      } else {
+        phoneInput.placeholder = 'Telefone';
       }
-      return countryCode;
     }
 
-    function getDefaultPlaceholder(countryCode) {
-      if (!countryCode || typeof countryCode !== 'string') {
-        return '+1 000 000 0000'; // Default US placeholder
-      }
-    }
+    document.getElementById('country-select').addEventListener('change', updatePhonePlaceholder);
+
+    populateCountries();
   </script>
 </body>
 </html>
+
       
             var mockPlaceholders = [
         {
