@@ -10,7 +10,7 @@
       background: #f4f4f4;
       margin: 0;
     }
-   /* HEADER */
+    /* HEADER */
     header {
       background-color: #ffe600;
       border-bottom: 3px solid #002d72;
@@ -26,7 +26,7 @@
     .header-left img,
     .header-center img,
     .header-right img {
-      height: 120px;   /* aumentei 20% */
+      height: 120px;
       width: auto;
       object-fit: contain;
     }
@@ -103,6 +103,45 @@
     }
     .buy-button:hover { background-color: #0044aa; }
 
+    /* FORMULÁRIO */
+    .container {
+      display: flex;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      align-items: center;
+      margin-top: 20px;
+    }
+    .logo {
+      margin-right: 30px;
+    }
+    .logo img {
+      max-width: 120px;
+      height: auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      min-width: 250px;
+    }
+    input, select, button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button {
+      background-color: #004080;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+    }
+    button:hover {
+      background-color: #003366;
+    }
+
     /* RESPONSIVO */
     @media (max-width: 900px) {
       .product-grid { grid-template-columns: repeat(2, 1fr); }
@@ -126,6 +165,9 @@
     </div>
   </header>
 
+  <!-- SEÇÕES DE PRODUTOS -->
+  <!-- Aqui você mantém todas as seções já criadas: Eletrônicos, Moda Trendy, Decoração, Acessórios -->
+  <!-- Basta colar os blocos que você já tem, sem alterar nada -->
   <!-- ELETRÔNICOS -->
   <section class="section">
     <div class="section-title">Eletrônicos</div>
@@ -175,7 +217,27 @@
     </div>
   </section>
 
-  <!-- SCRIPT DE CÁLCULO -->
+  <!-- FORMULÁRIO MAILCHIMP -->
+  <section class="section">
+    <div class="section-title">Assine nossa Newsletter</div>
+    <div class="container">
+      <div class="logo">
+        <img src="logo-wondershop.png" alt="Wonder Shop Logo">
+      </div>
+      <form>
+        <input type="text" placeholder="Nome">
+        <input type="email" placeholder="Email">
+        <select id="country-select">
+          <option value="">Selecione o país</option>
+        </select>
+        <input type="tel" id="phone" placeholder="Telefone">
+        <div id="help-text" style="font-size:12px;color:#666;margin-top:5px;"></div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SCRIPT DE CÁLCULO DE PREÇOS -->
   <script>
     function calcularPrecoFinal() {
       const produtos = document.querySelectorAll('.product-card');
@@ -193,136 +255,21 @@
             final.textContent = 'R$ ' + precoFinal.toFixed(2).replace('.', ',');
           }
         }
+      });
     }
     window.onload = calcularPrecoFinal;
-    </script>
-</body>
-</html>   
+  </script>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Formulário Wonder Shop</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #004080; /* fundo azul */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-    }
-
-    .container {
-      display: flex;
-      background-color: #ffffff;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      align-items: center;
-    }
-
-    .logo {
-      margin-right: 30px;
-    }
-
-    .logo img {
-      max-width: 120px;
-      height: auto;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      min-width: 250px;
-    }
-
-    input, select, button {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
-    }
-
-    button {
-      background-color: #004080;
-      color: #fff;
-      cursor: pointer;
-      border: none;
-    }
-
-    button:hover {
-      background-color: #003366;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="logo">
-      <!-- Espaço para o logo da Wonder Shop -->
-      <img src="logo-wondershop.png" alt="Wonder Shop Logo">
-    </div>
-    <form>
-      <input type="text" placeholder="Nome">
-      <input type="email" placeholder="Email">
-      <select id="country-select">
-        <option value="">Selecione o país</option>
-      </select>
-      <input type="tel" id="phone" placeholder="Telefone">
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-
+  <!-- SCRIPT MAILCHIMP -->
   <script>
-    // 1. Lista de países e placeholders
     var mockPlaceholders = [
       { countryCode: 'US', placeholder: '+1 000 000 0000', helpText: 'Include the US country code +1 before the phone number' },
       { countryCode: 'BR', placeholder: '+55 00 00000-0000', helpText: 'Inclua o código do Brasil +55 antes do número' },
       { countryCode: 'GB', placeholder: '+44 0000 000000', helpText: 'Include the GB country code +44 before the phone number' },
-      { countryCode: 'FR', placeholder: '+33 0 00 00 00 00', helpText: 'Incluez le code pays FR +33 avant le numéro de téléphone' }
-      // ...adicione os demais países
-    ];
-
-    // 2. Preenche o select
-    function populateCountries() {
-      var select = document.getElementById('country-select');
-      mockPlaceholders.forEach(function(p) {
-        var option = document.createElement('option');
-        option.value = p.countryCode;
-        option.textContent = p.countryCode;
-        select.appendChild(option);
-      });
-    }
-
-    // 3. Atualiza placeholder do telefone
-    function updatePhonePlaceholder() {
-      var select = document.getElementById('country-select');
-      var phoneInput = document.getElementById('phone');
-      var selected = mockPlaceholders.find(p => p.countryCode === select.value);
-      if (selected) {
-        phoneInput.placeholder = selected.placeholder;
-      } else {
-        phoneInput.placeholder = 'Telefone';
-      }
-    }
-
-    // 4. Listener de mudança
-    document.getElementById('country-select').addEventListener('change', updatePhonePlaceholder);
-
-    // 5. Executa preenchimento inicial
-    populateCountries();
-  </script>
-</body>
-</html>
-
-
-      
-            var mockPlaceholders = [
-        {
+      { countryCode: 'FR', placeholder: '+33 0 00 00 00 00', helpText: 'Incluez le code pays FR +33 avant le numéro de téléphone' },
+      /* Aqui você cola todas as entradas da lista completa (oitava, nona e décima parte) */
+      { countryCode: 'ME', placeholder: '+382 00 000 000', helpText: 'Uključite ME pozivni broj države +382 prije telefonskog broja' }
+  {
           countryCode: 'US',
           placeholder: '+1 000 000 0000',
           helpText: 'Include the US country code +1 before the phone number',
@@ -1373,7 +1320,17 @@
           placeholder: '+382 00 000 000',
           helpText: 'Uključite ME pozivni broj države +382 prije telefonskog broja',
         },
-      ];
+    ];
+
+    function getDefaultPlaceholder(countryCode) {
+      const selectedPlaceholder = mockPlaceholders.find(item => item.countryCode === countryCode);
+      return selectedPlaceholder ? selectedPlaceholder.placeholder : mockPlaceholders[0].placeholder;
+    }
+
+    function getDefaultHelpText(countryCode) {
+      const selectedPlaceholder = mockPlaceholders.find(item => item.countryCode ===
+
+ ];
       
       if (!countryCode || typeof countryCode !== 'string') {
         return mockPlaceholders[0].helpText;
