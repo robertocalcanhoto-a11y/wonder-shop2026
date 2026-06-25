@@ -218,8 +218,8 @@
   </section>
 <!-- FORMULÁRIO MAILCHIMP -->
 <section class="section">
-  <div class="section-title">Assine nossa Newsletter</div>
-  <div class="container">
+  <div class="section-title newsletter-title">Assine nossa Newsletter</div>
+  <div class="container newsletter-container">
     <div class="logo">
       <img src="logo-wondershop.png" alt="Wonder Shop Logo">
     </div>
@@ -230,17 +230,35 @@
   </div>
 </section>
 
-<!-- CSS extra para centralizar -->
+<!-- CSS extra para Newsletter -->
 <style>
-  .section .container {
+  /* Faixa amarela com fonte azul */
+  .newsletter-title {
+    background-color: #ffe600; /* amarelo Mercado Livre */
+    color: #002d72;            /* azul Mercado Livre */
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* Container azul */
+  .newsletter-container {
+    background-color: #002d72; /* azul Mercado Livre */
+    color: #fff;
     margin: 0 auto;
     justify-content: center;
+    border-radius: 8px;
   }
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* centraliza os campos dentro do form */
-    gap: 15px;
+
+  .newsletter-container form input,
+  .newsletter-container form button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .newsletter-container form button {
+    background-color: #ffe600; /* botão amarelo */
+    color: #002d72;            /* texto azul */
+    font-weight: bold;
   }
 </style>
 
@@ -251,6 +269,7 @@
   m.async=1,m.src=i,p.parentNode.insertBefore(m,p)
 }(document,"script","https://chimpstatic.com/mcjs-connected/js/users/9d408a1bef564e235e7adef20/587a131962a98be0642318d91.js");
 </script>
+
 
 
   function populateCountries() {
