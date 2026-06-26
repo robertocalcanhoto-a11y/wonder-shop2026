@@ -217,25 +217,33 @@
     </div>
   </section>
 
-  <!-- FORMULÁRIO MAILCHIMP -->
-  <section class="section">
-    <div class="section-title">Assine nossa Newsletter</div>
-    <div class="container">
-      <div class="logo">
-        <img src="logowondershop.png" alt="Wonder Shop Logo">
-      </div>
-      <form>
-        <input type="text" placeholder="Nome">
-        <input type="email" placeholder="Email">
-        <select id="country-select">
-          <option value="">Selecione o país</option>
-        </select>
-        <input type="tel" id="phone" placeholder="Telefone">
-        <div id="help-text" style="font-size:12px;color:#666;margin-top:5px;"></div>
-        <button type="submit">Enviar</button>
-      </form>
+ <!-- FORMULÁRIO MAILCHIMP -->
+<section class="section">
+  <div class="section-title">Assine nossa Newsletter</div>
+  <div class="container">
+    <div class="logo">
+      <img src="logowondershop.png" alt="Wonder Shop Logo">
     </div>
-  </section>
+
+    <!-- Código do formulário Mailchimp com seus campos -->
+    <form action="https://github.us3.list-manage.com/subscribe/post?u=9d408a1bef564e235e7adef20&amp;id=c492db83f9&amp;f_id=002cdde0f0" method="post" target="_blank">
+      <input type="text" name="FNAME" placeholder="Nome">
+      <input type="email" name="EMAIL" placeholder="Email" required>
+      <select id="country-select" name="COUNTRY">
+        <option value="">Selecione o país</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Portugal">Portugal</option>
+        <option value="Outro">Outro</option>
+      </select>
+      <input type="tel" id="phone" name="PHONE" placeholder="Telefone">
+      <div id="help-text" style="font-size:12px;color:#666;margin-top:5px;">
+        Seus dados serão usados apenas para envio da newsletter.
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
+
 
   <!-- SCRIPT DE CÁLCULO DE PREÇOS -->
   <script>
