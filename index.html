@@ -217,81 +217,33 @@
     </div>
   </section>
 
-/* FORMULÁRIO MAILCHIMP */
-.section.newsletter {
-  background-color: #002d72; /* Azul Mercado Livre */
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.section.newsletter .section-title {
-  background-color: #ffe600; /* Faixa amarela */
-  color: #002d72;            /* Fonte azul */
-  font-size: 22px;
-  font-weight: bold;
-  padding: 12px;
-  border-radius: 6px;
-  margin-bottom: 20px;
-  display: inline-block;
-}
-
-.section.newsletter .container {
-  display: flex;
-  flex-direction: column; /* Logo em cima, formulário abaixo */
-  align-items: center;
-  gap: 20px;
-}
-
-.section.newsletter .logo img {
-  height: 80px;
-  width: auto;
-}
-
-.section.newsletter form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 400px;
-  width: 100%;
-}
-
-.section.newsletter input,
-.section.newsletter select,
-.section.newsletter button {
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.section.newsletter button {
-  background-color: #ffe600;
-  color: #002d72;
-  font-weight: bold;
-  cursor: pointer;
-}
-.section.newsletter button:hover {
-  background-color: #ffd000;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .section.newsletter .logo img {
-    height: 60px;
-  }
-  .section.newsletter form {
-    max-width: 100%; /* Ocupa toda largura no celular */
-  }
-  .section.newsletter .section-title {
-    font-size: 18px;
-    padding: 10px;
- </form>
+<!-- FORMULÁRIO MAILCHIMP -->
+<section class="section newsletter">
+  <div class="section-title">Assine e fique por dentro!</div>
+  <div class="container">
+    <div class="logo">
+      <img src="logowondershop.png" alt="Wonder Shop Logo">
     </div>
-  </section>
 
+    <form action="https://github.us3.list-manage.com/subscribe/post?u=9d408a1bef564e235e7adef20&amp;id=c492db83f9&amp;f_id=002cdde0f0" method="post" target="_blank">
+      <input type="text" name="FNAME" placeholder="Nome">
+      <input type="email" name="EMAIL" placeholder="Email" required>
+      <select id="country-select" name="COUNTRY">
+        <option value="">Selecione o país</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Portugal">Portugal</option>
+        <option value="Outro">Outro</option>
+      </select>
+      <input type="tel" id="phone" name="PHONE" placeholder="Telefone">
+      <div id="help-text" style="font-size:12px;color:#666;margin-top:5px;">
+        Seus dados serão usados apenas para envio da newsletter.
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
 
-
-
-  <!-- SCRIPT DE CÁLCULO DE PREÇOS -->
+<!-- SCRIPT DE CÁLCULO DE PREÇOS -->
   <script>
     function calcularPrecoFinal() {
       const produtos = document.querySelectorAll('.product-card');
