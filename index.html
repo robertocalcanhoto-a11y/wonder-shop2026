@@ -105,31 +105,32 @@
 
     /* FORMULÁRIO MAILCHIMP */
 .section.newsletter {
-  background-color: #002d72; /* Azul Mercado Livre */
   padding: 40px 20px;
-  text-align: center;
 }
 
 .section.newsletter .section-title {
   background-color: #ffe600; /* Faixa amarela */
-  color: #002d72;            /* Fonte azul */
+  color: #002d72;            /* Texto azul */
   font-size: 22px;
   font-weight: bold;
   padding: 12px;
   border-radius: 6px;
   margin-bottom: 20px;
-  display: inline-block;
+  text-align: center;
 }
 
 .section.newsletter .container {
+  background-color: #002d72; /* Bloco azul */
+  padding: 30px;
+  border-radius: 8px;
   display: flex;
-  flex-direction: column; /* Logo em cima, formulário abaixo */
-  align-items: center;
-  gap: 20px;
+  align-items: center;       /* Alinha verticalmente logo e form */
+  justify-content: center;   /* Centraliza horizontalmente */
+  gap: 40px;                 /* Espaço entre logo e formulário */
 }
 
 .section.newsletter .logo img {
-  height: 80px;
+  height: 80px; /* Ajuste conforme sua logo */
   width: auto;
 }
 
@@ -150,13 +151,24 @@
 }
 
 .section.newsletter button {
-  background-color: #ffe600;
-  color: #002d72;
+  background-color: #ffe600; /* Botão amarelo */
+  color: #002d72;            /* Texto azul */
   font-weight: bold;
   cursor: pointer;
 }
 .section.newsletter button:hover {
   background-color: #ffd000;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .section.newsletter .container {
+    flex-direction: column; /* No celular, logo em cima e form abaixo */
+    gap: 20px;
+  }
+  .section.newsletter .logo img {
+    height: 60px;
+  }
 }
 
 /* RESPONSIVO */
