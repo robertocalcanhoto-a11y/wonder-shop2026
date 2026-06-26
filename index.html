@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mercado Livre & Afiliada Wonder Shop</title>
-  <style>
+<style>
   body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
     margin: 0;
   }
+
   /* HEADER */
   header {
     background-color: #ffe600;
@@ -58,44 +59,82 @@
     border-radius: 8px 8px 0 0;
   }
 
+  /* PRODUCT GRID */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+  }
+  .product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    transition: 0.2s;
+  }
+  .product-card img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  .card-content { text-align: center; }
+  .card-content h3 { font-size: 16px; margin-bottom: 6px; }
+  .card-content p { font-size: 13px; margin-bottom: 6px; }
+  .price-original { font-size: 13px; text-decoration: line-through; color: #999; }
+  .discount { font-size: 13px; font-weight: bold; margin-left: 6px; color: #e74c3c; }
+  .price-final { font-size: 14px; font-weight: bold; margin: 6px 0; color: #f57f17; }
+  .buy-button {
+    font-size: 13px;
+    padding: 6px 12px;
+    background-color: #002d72;
+    color: #ffe600;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  .buy-button:hover { background-color: #0044aa; }
+
   /* FOOTER */
   .footer {
     background-color: #FFD700; /* Faixa amarela */
     padding: 20px 0;
   }
-
   .footer-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 40px;
   }
-
   .footer-logo img {
     height: 60px;
   }
-
   .footer-newsletter {
     text-align: center;
   }
-
   .footer-newsletter h2 {
     margin-bottom: 10px;
     font-family: Arial, sans-serif;
     color: #333;
   }
-
   .footer-newsletter form {
     display: flex;
     gap: 10px;
   }
-
   .footer-newsletter input[type="email"] {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-
   .footer-newsletter button {
     padding: 8px 16px;
     background-color: #333;
@@ -103,6 +142,9 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+  }
+</style>
+
   }
 </style>
     max-width: 1400px;
