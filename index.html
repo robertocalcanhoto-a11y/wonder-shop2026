@@ -247,66 +247,10 @@
   <div class="newsletter-title">Assine nossa Newsletter</div>
   <div class="newsletter-container">
     <div class="logo">
-      <img src="logo-wondershop.png" alt="Wonder Shop Logo">
+      <img src="logowondershop.png" alt="Wonder Shop Logo">
     </div>
     <!-- Aqui entra o form da Mailchimp -->
-    <form action="https://github.us3.list-manage.com/subscribe/post?u=9d408a1bef564e235e7adef20&amp;id=c492db83f9&amp;f_id=002bdde0f0" 
-          method="post" target="_blank" class="validate">
-      <input type="email" name="EMAIL" placeholder="Email" required>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-</section>
-  }
-
-  .newsletter-container form input {
-    width: 100%;
-    max-width: 300px;
-    padding: 10px;
-  }
-
-  .newsletter-container form button {
-    background-color: #ffe600; /* amarelo */
-    color: #002d72;            /* azul */
-    font-weight: bold;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-  }
-
-  /* Logo autoajustável */
-  .logo img {
-    max-width: 200px; /* limite máximo */
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-</style>
-
-  <!-- SCRIPT DE CÁLCULO DE PREÇOS -->
-  <script>
-    function calcularPrecoFinal() {
-      const produtos = document.querySelectorAll('.product-card');
-      produtos.forEach(card => {
-        const original = card.querySelector('.price-original');
-        const desconto = card.querySelector('.discount');
-        const final = card.querySelector('.price-final');
-
-        if (original && desconto && final) {
-          const precoOriginal = parseFloat(original.textContent.replace('R$', '').replace(/\./g, '').replace(',', '.'));
-          const percentual = parseFloat(desconto.textContent.replace('-', '').replace('%', ''));
-
-          if (!isNaN(precoOriginal) && !isNaN(percentual)) {
-            const precoFinal = precoOriginal * (1 - percentual / 100);
-            final.textContent = 'R$ ' + precoFinal.toFixed(2).replace('.', ',');
-          }
-        }
-      });
-    }
-    window.onload = calcularPrecoFinal;
-  </script>
-  <!-- FORMULÁRIO MAILCHIMP -->
-<div id="mc_embed_signup">
+   <div id="mc_embed_signup">
     <form action="https://github.us3.list-manage.com/subscribe/post?u=9d408a1bef564e235e7adef20&amp;id=c492db83f9&amp;f_id=002bdde0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
         <div id="mc_embed_signup_scroll"><h2>Inscrever</h2>
             <div class="indicates-required"><span class="asterisk">*</span> indica obrigatório</div>
@@ -1085,3 +1029,55 @@
     </script></div>
 
 </html>
+
+  </div>
+</section>
+  }
+
+  .newsletter-container form input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+  }
+
+  .newsletter-container form button {
+    background-color: #ffe600; /* amarelo */
+    color: #002d72;            /* azul */
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  /* Logo autoajustável */
+  .logo img {
+    max-width: 200px; /* limite máximo */
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>
+
+  <!-- SCRIPT DE CÁLCULO DE PREÇOS -->
+  <script>
+    function calcularPrecoFinal() {
+      const produtos = document.querySelectorAll('.product-card');
+      produtos.forEach(card => {
+        const original = card.querySelector('.price-original');
+        const desconto = card.querySelector('.discount');
+        const final = card.querySelector('.price-final');
+
+        if (original && desconto && final) {
+          const precoOriginal = parseFloat(original.textContent.replace('R$', '').replace(/\./g, '').replace(',', '.'));
+          const percentual = parseFloat(desconto.textContent.replace('-', '').replace('%', ''));
+
+          if (!isNaN(precoOriginal) && !isNaN(percentual)) {
+            const precoFinal = precoOriginal * (1 - percentual / 100);
+            final.textContent = 'R$ ' + precoFinal.toFixed(2).replace('.', ',');
+          }
+        }
+      });
+    }
+    window.onload = calcularPrecoFinal;
+  </script>
+  <!-- FORMULÁRIO MAILCHIMP -->
